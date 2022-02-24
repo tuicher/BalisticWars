@@ -19,14 +19,7 @@ public class Canyon : MonoBehaviour
     {
         GetDegRotation();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     { 
         rotation = Input.GetAxis("Horizontal");
@@ -38,8 +31,6 @@ public class Canyon : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
             Shoot();
-        
-            
     }
 
     private void Shoot()
@@ -49,8 +40,9 @@ public class Canyon : MonoBehaviour
         var a = new Vector2(transform.position.x, transform.position.y);
         var b = new Vector2(aux.x, aux.y);
         var dir = b - a;
+        
         var pro = Instantiate(proyectile, pivot.position, Quaternion.identity);
-        pro.GetComponent<Pioneer_I>().SetInitialValues(dir.normalized, dir.magnitude * proyectileForce);
+        pro.GetComponent<BalisticProyectile>().SetInitialValues(dir.normalized, dir.magnitude * proyectileForce);
     }
 
     private void GetDegRotation()
