@@ -7,16 +7,21 @@ using UnityEngine;
 public class Canyon : MonoBehaviour
 {
     [SerializeField] private Transform pivot;
-    [Space]
+    [Space] [SerializeField] private Vector2 direction;
     [SerializeField] private float angle;
     [SerializeField] private float rotation;
     [SerializeField] private float rotationSpd;
-    [SerializeField] private float proyectileForce;
     [Space] 
     [SerializeField] private GameObject proyectile;
-    
+    [SerializeField] private float proyectileForce;
+    [Space]
+    [SerializeField] private int previsualizationSteps;
+    [SerializeField] private List<Vector2> prev;
+    [SerializeField] private LineRenderer lineRenderer;
+
     private void Awake()
     {
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
         GetDegRotation();
     }
     
@@ -27,10 +32,13 @@ public class Canyon : MonoBehaviour
         {
             pivot.Rotate(Vector3.back, rotation * rotationSpd);
             GetDegRotation();
+            CalculateShoot();
         }
 
         if (Input.GetButtonDown("Fire1"))
             Shoot();
+        
+        
     }
 
     private void Shoot()
@@ -48,5 +56,25 @@ public class Canyon : MonoBehaviour
     private void GetDegRotation()
     {
         angle = pivot.localRotation.eulerAngles.z;
+    }
+
+    private Vector3 GetVelocity(float t)
+    {
+        return pivot.up.normalized * (proyectileForce - PlayerController.gravity * t);
+    }
+    private Vector3 GetPosition(float t)
+    {
+        return pivot.position + GetVelocity(t);
+    }
+
+    private void CalculateShoot()
+    {
+        int j = 0;
+        for (float i = 0; i < previsualizationSteps; i+=0.1f)
+        {
+            var aux = GetPosition(i);
+            lineRenderer.SetPosition(j, aux);
+            j++;
+        }
     }
 }

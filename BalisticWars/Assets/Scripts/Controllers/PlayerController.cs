@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float scrollSpeed;
 
-    [SerializeField] private float gravity;
+    [SerializeField] public const float gravity = -4.9f;
     [SerializeField] private List<GameObject> attracted;
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Experimental;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BalisticProyectile : MonoBehaviour
 {
@@ -17,12 +18,20 @@ public class BalisticProyectile : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private List<Vector3> posList;
     [SerializeField] private float count = 0;
-    
+    [SerializeField] private Material rndMat;
     private void Awake()
     {
+        
         earth = GameObject.FindGameObjectWithTag("Earth");
+
+        var c = new Color(Random.value, Random.value,Random.value, 1f);
+
+        rndMat.color = c;
         myTrans = gameObject.GetComponent<Transform>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
+        lineRenderer.startColor = lineRenderer.endColor = c;
+
+        gameObject.GetComponent<SpriteRenderer>().color = c;
     }
 
     private void Start()
