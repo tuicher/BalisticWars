@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -462,7 +462,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 45.108326
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -486,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 108.1, z: -10}
+  m_LocalPosition: {x: 5, y: 121, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -650,13 +650,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 1175907457}
+  earth: {fileID: 0}
   direction: {x: 0, y: 0}
   angle: 0
-  rotation: 0
+  shootAngle: {x: 0, y: 0, z: 0}
   rotationSpd: 0.4
   proyectile: {fileID: 2295060093749655094, guid: f8465950ae199294ba6e5782bb8ee4e5, type: 3}
-  proyectileForce: 5
-  previsualizationSteps: 0
+  proyectileForce: 20
+  previsualizationSteps: 25
   prev: []
   lineRenderer: {fileID: 0}
 --- !u!4 &2087014895
@@ -684,7 +685,7 @@ LineRenderer:
   m_GameObject: {fileID: 2087014893}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 0
   m_LightProbeUsage: 0
