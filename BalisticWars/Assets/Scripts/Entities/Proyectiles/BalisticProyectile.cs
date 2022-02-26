@@ -17,7 +17,7 @@ public class BalisticProyectile : MonoBehaviour
     [SerializeField] private bool flying;
     [Space] 
     [SerializeField] private float count = 0;
-    [SerializeField] private Material rndMat;
+    [SerializeField] private Color color;
     private void Awake()
     {
         
@@ -25,15 +25,7 @@ public class BalisticProyectile : MonoBehaviour
 
         rgbd = GetComponent<Rigidbody2D>();
 
-        var c = new Color(Random.value, Random.value,Random.value, 1f);
-
-        rndMat.color = c;
-        gameObject.GetComponentInChildren<SpriteRenderer>().color = c;
-    }
-
-    private void Start()
-    {
-        earth.GetComponent<PlayerController>().AddAttracted(gameObject);
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = color;
     }
 
     private void FixedUpdate()
@@ -57,6 +49,7 @@ public class BalisticProyectile : MonoBehaviour
         var dir = new Vector2(aux.x, aux.y);
         
         rgbd.velocity -= dir.normalized * PlayerController.GRAVITY;
+        transform.up = rgbd.velocity.normalized;
     }
 
     public void SetInitialValues(Vector2 v, float f)

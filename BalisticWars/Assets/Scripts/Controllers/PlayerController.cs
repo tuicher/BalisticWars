@@ -10,14 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float scrollSpeed;
 
     [SerializeField] public const float GRAVITY = -4.9f;
-    [SerializeField] private List<GameObject> attracted;
 
 
     private void Awake()
     {
         // initialize component
         mainCamera = Camera.main;
-        attracted = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -28,10 +26,5 @@ public class PlayerController : MonoBehaviour
         {
             mainCamera.orthographicSize -= aux * scrollSpeed;
         }
-    }
-    public void AddAttracted(GameObject toAttract)
-    {
-        Debug.Log("Added: ", toAttract);
-        attracted.Add(toAttract);
     }
 }

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9c526e9266354d4c94eb13a000af37f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6259164740688493144}
   - component: {fileID: 6259164740688493145}
-  - component: {fileID: 6259164740688493146}
   - component: {fileID: 6259164740688493147}
+  - component: {fileID: 7353158490669912529}
   m_Layer: 0
   m_Name: BaseProyectile
   m_TagString: Untagged
@@ -135,23 +135,7 @@ MonoBehaviour:
   force: 0
   flying: 1
   count: 0
-  rndMat: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
---- !u!58 &6259164740688493146
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6259164740688493142}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.9816132, y: -0.04953003}
-  serializedVersion: 2
-  m_Radius: 9.863113
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &6259164740688493147
 Rigidbody2D:
   serializedVersion: 4
@@ -173,3 +157,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!70 &7353158490669912529
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259164740688493142}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.8908691, y: 0.021507263}
+  m_Size: {x: 4.630188, y: 19.806412}
+  m_Direction: 0
