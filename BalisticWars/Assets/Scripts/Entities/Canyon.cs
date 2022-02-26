@@ -50,7 +50,7 @@ public class Canyon : MonoBehaviour
         }
         
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
             Shoot();
         
         
@@ -81,7 +81,7 @@ public class Canyon : MonoBehaviour
         lineRenderer.SetPosition(0, p);
         for (int i = 1; i < previsualizationSteps; i++)
         {
-            a = (earth.position - p).normalized * PlayerController.gravity;
+            a = (earth.position - p).normalized * PlayerController.GRAVITY;
             v -= a;
             p += v;
             lineRenderer.SetPosition(i, p);

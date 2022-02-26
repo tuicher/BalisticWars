@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float scrollSpeed;
 
-    [SerializeField] public const float gravity = -4.9f;
+    [SerializeField] public const float GRAVITY = -4.9f;
     [SerializeField] private List<GameObject> attracted;
 
 
@@ -29,28 +29,9 @@ public class PlayerController : MonoBehaviour
             mainCamera.orthographicSize -= aux * scrollSpeed;
         }
     }
-
-    private void FixedUpdate()
-    {
-        UpdateAttracted();
-    }
-
     public void AddAttracted(GameObject toAttract)
     {
-        Debug.Log("HOLA");
+        Debug.Log("Added: ", toAttract);
         attracted.Add(toAttract);
-    }
-
-    void UpdateAttracted()
-    {
-        foreach (var att in attracted)
-        {
-            var a_trans = att.transform;
-            var aux = transform.position - a_trans.position;
-            var dir = new Vector2(aux.x, aux.y);
-
-            var a_rgbd = att.GetComponent<Rigidbody2D>();
-            a_rgbd.velocity -= dir.normalized * gravity;
-        }
     }
 }
