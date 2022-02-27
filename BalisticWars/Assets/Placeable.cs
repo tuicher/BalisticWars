@@ -8,10 +8,10 @@ public class Placeable : MonoBehaviour
     [SerializeField] private GameObject earth;
 
 
-    void Awake()
+    void Start()
     {
         earth = GameObject.FindGameObjectWithTag("Earth");
-        SetOrientation();
+        SetOrientation();   
     }
 
     private void Update()
