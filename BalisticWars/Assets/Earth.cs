@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Earth : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Earth : MonoBehaviour
             var pos = Vector3.up * radio;
             var q = Quaternion.Euler(0, 0, i);
             pos = q * pos;
+
             Instantiate(chunk, pos, q, transform);
         }
        

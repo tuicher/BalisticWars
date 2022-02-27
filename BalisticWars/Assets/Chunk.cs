@@ -2,17 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Chunk : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer sprtRenderer;
-    [SerializeField] private Transform pivot;
-
-    [SerializeField] private Color chunkColor;
-
+    [SerializeField] private Color continent;
+    [SerializeField] private Color ocean;
 
     private void Awake()
     {
-        pivot = transform.GetChild(0);
+        var chunkColor = continent;
+        if (Random.value > 0.5f)
+        {
+            chunkColor = ocean;
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = chunkColor;
     }
 }
