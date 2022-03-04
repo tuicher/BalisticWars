@@ -13,12 +13,7 @@ public enum Biome
 
 public class Chunk : MonoBehaviour
 {
-    [SerializeField] private Biome biome;
     
-    
-    private void Awake()
-    {
-    }
     private Color GetColor (Biome b)
     {
         switch (b)
@@ -36,6 +31,7 @@ public class Chunk : MonoBehaviour
 
     public void SetBiome(Biome b)
     {
+        gameObject.tag = b.ToString();
         var c = GetColor(b);
         gameObject.GetComponent<SpriteRenderer>().color = c;
     }
