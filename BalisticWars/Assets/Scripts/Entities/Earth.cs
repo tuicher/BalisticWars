@@ -55,7 +55,7 @@ public class Earth : MonoBehaviour
 
             chuckList.Add(Instantiate(chunk, pos, q, transform));
         }
-        
-        LoadChunks("w;w;w;w;w;w;w;w;s;s;s;s;s;s;d;d;w;w;w;d;d;d;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;s;s;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w");
+        LoadChunks("s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;s;d;d;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;s;s;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w");
+        //LoadChunks("w;w;w;w;w;w;w;w;s;s;s;s;s;s;d;d;w;w;w;d;d;d;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;w;s;s;s;s;s;s;w;w;w;w;w;w;w;w;w;w;w;w");
     }
 }

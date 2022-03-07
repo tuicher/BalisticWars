@@ -22,7 +22,6 @@ public class BalisticProyectile : MonoBehaviour
     {
         
         earth = GameObject.FindGameObjectWithTag("Earth");
-
         rgbd = GetComponent<Rigidbody2D>();
 
         gameObject.GetComponentInChildren<SpriteRenderer>().color = color;

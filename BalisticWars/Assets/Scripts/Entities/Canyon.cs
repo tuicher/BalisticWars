@@ -64,6 +64,7 @@ public class Canyon : MonoBehaviour
         //var dir = b - a;
         
         var pro = Instantiate(proyectile, pivot.position, Quaternion.identity);
+        pro.transform.parent = gameObject.transform;
         pro.GetComponent<BalisticProyectile>().SetInitialValues(pivot.right, proyectileForce * 6.8f);
     }
 
@@ -77,7 +78,7 @@ public class Canyon : MonoBehaviour
         lineRenderer.positionCount = previsualizationSteps;
         Vector3 a = Vector3.zero; 
         Vector3 v = pivot.right * proyectileForce; 
-        Vector3 p = pivot.position;
+        Vector3 p = pivot.position; 
         lineRenderer.SetPosition(0, p);
         for (int i = 1; i < previsualizationSteps; i++)
         {

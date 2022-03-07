@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588804fe6d36a934784f1bc334062930, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continent: {r: 0, g: 0.8962264, b: 0.023793578, a: 1}
-  ocean: {r: 0, g: 0, b: 0.7169812, a: 1}
 --- !u!212 &2107050829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0a7328b9f9694345abeb41ef3009ebf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08c03f913f24de44481757aee9f33d6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

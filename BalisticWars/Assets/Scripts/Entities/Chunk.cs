@@ -31,7 +31,7 @@ public class Chunk : MonoBehaviour
 
     public void SetBiome(Biome b)
     {
-        gameObject.tag = b.ToString();
+        //gameObject.tag = b.ToString();
         var c = GetColor(b);
         gameObject.GetComponent<SpriteRenderer>().color = c;
     }

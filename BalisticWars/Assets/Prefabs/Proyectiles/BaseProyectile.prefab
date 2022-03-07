@@ -135,7 +135,7 @@ MonoBehaviour:
   force: 0
   flying: 1
   count: 0
-  color: {r: 0.015686274, g: 0.04641557, b: 1, a: 1}
+  color: {r: 1, g: 0.015686518, b: 0.015686274, a: 1}
 --- !u!50 &6259164740688493147
 Rigidbody2D:
   serializedVersion: 4
